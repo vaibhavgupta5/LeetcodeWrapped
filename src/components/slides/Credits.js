@@ -27,17 +27,7 @@ export default function Credits() {
           <p className="text-gray-400">Ready to create your own?</p>
         </motion.div>
 
-        {/* Make Your Own Button */}
-        <motion.button
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          onClick={() => window.location.reload()}
-          className="mb-4 px-8 py-4 bg-[#FFA116] text-black font-bold rounded-full hover:bg-[#ffb84d] transition-colors flex items-center gap-2"
-        >
-          <span>Refresh To Make Your Own Wrapped</span>
-        </motion.button>
-
+      
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
