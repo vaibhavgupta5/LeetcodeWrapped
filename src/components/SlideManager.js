@@ -112,14 +112,29 @@ export default function SlideManager({ data }) {
       console.log('Auto-play failed:', err);
       setIsPlaying(false);
     });
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        if (audioRef.current && isPlaying) {
+          audioRef.current.pause();
+        }
+      } else {
+        if (audioRef.current && isPlaying) {
+          audioRef.current.play().catch(err => console.log('Audio play failed:', err));
+        }
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
     
     return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current = null;
       }
     };
-  }, []);
+  }, [isPlaying]);
 
   const toggleAutoScroll = () => {
     const newAutoScrollState = !isAutoScrolling;

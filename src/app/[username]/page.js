@@ -47,7 +47,7 @@ export default function UserWrapped() {
     return (
       <div className="w-full h-full flex items-center justify-center bg-[#1a1a1a]">
         <div className="text-center">
-          <p className="text-gray-400">Loading {username}'s wrapped...</p>
+          <p className="text-gray-400">Loading {username}&apos;s wrapped...</p>
         </div>
       </div>
     );
