@@ -1,26 +1,50 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #1a1a1a; /* LeetCode Dark Mode Background */
+  --foreground: #eff1f6eb; /* LeetCode Text Color */
+  --leetcode-orange: #ffa116;
+  --code-green: #2cbb5d;
+  --error-red: #ef4743;
+  --card-bg: #282828;
+  --border-color: #3e3e3e;
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
+  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+/* Clean Grid Background - No Gradients */
+.bg-grid-pattern {
+  background-size: 20px 20px;
+  background-image: linear-gradient(to right, #2d2d2d 1px, transparent 1px),
+    linear-gradient(to bottom, #2d2d2d 1px, transparent 1px);
+  opacity: 0.5;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* Notebook Card Shape - Sharp Bottom Right with Thicker Borders */
+.notebook-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-right-width: 4px;
+  border-bottom-width: 4px;
+  border-radius: 1rem 1rem 0 1rem;
 }
