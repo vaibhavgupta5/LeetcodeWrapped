@@ -166,13 +166,14 @@ export default function SlideManager({ data }) {
 
   const getCaption = (platform) => {
     const shareUrl = getShareUrl();
+    const baseUrl = window.location.origin;
     
     if (platform === "x") {
-      return `#LeetCodeWrapped 🚀\n\nJust wrapped up 2025 on @LeetCode!\n\n✅ ${totalSolved} problems solved\n🏆 Global Rank #${ranking}\n💪 ${hard} Hard problems conquered\n\nCheck out my full wrapped: ${shareUrl}\n\n#100DaysOfCode #CodingLife #LeetCode`;
+      return `#LeetCodeWrapped 🚀\n\nJust wrapped up 2025 on @LeetCode!\n\n✅ ${totalSolved} problems solved\n🏆 Global Rank #${ranking}\n💪 ${hard} Hard problems conquered\n\nCheck out my full wrapped: ${shareUrl}\n\nMake your own wrapped: ${baseUrl}\n\n#100DaysOfCode #CodingLife #LeetCode`;
     } else if (platform === "instagram") {
-      return `#LeetCodeWrapped 💻✨\n\nMy LeetCode 2025 Journey:\n\n${totalSolved} problems crushed 💪\nGlobal Rank #${ranking} 🏆\n${hard} Hard problems down 🔥\n\nThe grind never stops! 🚀\n\nView my full wrapped: ${shareUrl}\n\n#LeetCode #CodingLife #100DaysOfCode #ProgrammingJourney #TechLife #DeveloperLife #CodeNewbie`;
+      return `#LeetCodeWrapped 💻✨\n\nMy LeetCode 2025 Journey:\n\n${totalSolved} problems crushed 💪\nGlobal Rank #${ranking} 🏆\n${hard} Hard problems down 🔥\n\nThe grind never stops! 🚀\n\nView my full wrapped: ${shareUrl}\n\nMake your own: ${baseUrl}\n\n#LeetCode #CodingLife #100DaysOfCode #ProgrammingJourney #TechLife #DeveloperLife #CodeNewbie`;
     }
-    return `#LeetCodeWrapped\n\nCheck out my LeetCode 2025!\n\n✅ ${totalSolved} problems solved\n🏆 Global Rank #${ranking}\n💪 ${hard} Hard problems conquered\n\n${shareUrl}\n\n#100DaysOfCode #LeetCode`;
+    return `#LeetCodeWrapped\n\nCheck out my LeetCode 2025!\n\n✅ ${totalSolved} problems solved\n🏆 Global Rank #${ranking}\n💪 ${hard} Hard problems conquered\n\n${shareUrl}\n\nMake your own wrapped: ${baseUrl}\n\n#100DaysOfCode #LeetCode`;
   };
 
   const handleShareClick = async () => {
