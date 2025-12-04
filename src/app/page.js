@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Search, Loader2, AlertCircle } from "lucide-react";
+import { Search, Loader2, AlertCircle, Heart, Github } from "lucide-react";
 import SlideManager from "@/components/SlideManager";
 import ContributionGrid from "@/components/ContributionGrid";
 import { fetchLeetCodeData } from "./actions";
@@ -161,6 +161,37 @@ export default function Home() {
             </motion.div>
           )}
         </div>
+
+        {/* Made with love footer */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="mt-8 text-center"
+        >
+          <div className="flex items-center justify-center gap-2 text-gray-500 text-sm mb-3">
+            <span>Made with</span>
+            <Heart size={16} className="text-red-500 fill-red-500 animate-pulse" />
+            <span>by</span>
+            <a
+              href="https://github.com/vaibhavgupta5"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#ffa116] hover:text-[#ffb84d] transition-colors font-medium"
+            >
+              Vaibhav Gupta
+            </a>
+          </div>
+          <a
+            href="https://github.com/vaibhavgupta5/leetcodewrapped"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm"
+          >
+            <Github size={16} />
+            <span>View on GitHub</span>
+          </a>
+        </motion.div>
       </motion.div>
     </div>
   );
